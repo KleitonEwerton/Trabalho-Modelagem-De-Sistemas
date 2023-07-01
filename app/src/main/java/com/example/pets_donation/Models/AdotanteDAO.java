@@ -52,6 +52,7 @@ public class AdotanteDAO {
         values.put("NUMERO", adotante.getNumero());
         values.put("CPF", adotante.getCpf());
         values.put("SENHA", adotante.getSenha());
+        System.out.println("AdotanteDAO: " + adotante.getSenha());
         values.put("FOTO", (byte[]) null);
         long inserir = banco.insert("adotante", null, values);
         if(inserir == -1)

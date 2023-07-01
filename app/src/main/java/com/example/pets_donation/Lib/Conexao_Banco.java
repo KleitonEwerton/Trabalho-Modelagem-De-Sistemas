@@ -68,6 +68,7 @@ public class Conexao_Banco extends SQLiteOpenHelper {
                 "FOREIGN KEY (ID_ABRIGO) REFERENCES abrigo (ID)," +
                 "FOREIGN KEY (CPF_FUNCIONARIO) REFERENCES funcionario(CPF))");
 
+
         db.execSQL("create table processoAdocao(ID integer primary key autoincrement, " +
                 "MORADA varchar(11), IMOVEL varchar(100), QTDE_PESSOAS varchar(3), QTDE_ANIMAIS varchar(100)," +
                 "LOCAL varchar(100), PERMANENCIA varchar(100), ATUAL varchar(100), FALECIDO varchar(100)," +
@@ -90,6 +91,32 @@ public class Conexao_Banco extends SQLiteOpenHelper {
                 "FOREIGN KEY (CPF_ADOTANTE) REFERENCES adotante (CPF)," +
                 "FOREIGN KEY (CPF_FUNCIONARIO) REFERENCES funcionario (CPF)," +
                 "FOREIGN KEY (ID_ANIMAL) REFERENCES animal (ID))");
+            
+        
+
+        //inserindo dados no banco
+        db.execSQL("insert into funcionario values('admin', '01/01/2000', 'Masculino', 'Celular', '11999999999', 'admin1@admin', '1000', '00000000', 'MG', 'Minas Gerais', 'Juiz de Fora', 'Rua admin', '1', '336.203.460-89', 'admin12345', null)");
+        db.execSQL("insert into funcionario values('admin2', '01/01/2000', 'Masculino', 'Celular', '11999999999', 'admin2@admin', '1000', '00000000', 'SP', 'São Paulo', 'São Paulo', 'Rua admin', '1', '906.827.090-77', 'admin12345', null)");
+        
+        db.execSQL("insert into abrigo values(1, 'Abrigo 1', 'Celular', '11999999999', '00000000', 'SP', 'São Paulo', 'São Paulo', 'Rua abrigo 1', '1')");
+        db.execSQL("insert into abrigo values(null, 'Abrigo 2', 'Celular', '11999999999', '00000000', 'MG', 'Minas Gerais', 'Juiz de Fora', 'Rua abrigo 2', '1')");
+        db.execSQL("insert into abrigo values(null, 'Abrigo 3', 'Celular', '11999999999', '00000000', 'RJ', 'Rio de Janeiro', 'Três Rios', 'Rua abrigo 3', '1')");
+        db.execSQL("insert into abrigo values(null, 'Abrigo 3', 'Celular', '11999999999', '00000000', 'RJ', 'Rio de Janeiro', 'Três Rios', 'Rua abrigo 3', '1')");
+        db.execSQL("insert into abrigo values(null, 'Abrigo 3', 'Celular', '11999999999', '00000000', 'RJ', 'Rio de Janeiro', 'Três Rios', 'Rua abrigo 3', '1')");
+
+        db.execSQL("insert into adotante values('Adotante 1', '01/01/2000', 'Masculino', 'Celular', '11999999999', 'adotante1@gmail.com', '9000' ,'08391700', 'SP', 'São Paulo', 'São Rafael', 'Rua Nina Simone', '1', '124.188.870-14', 'adotante', null)");
+        db.execSQL("insert into adotante values('Adotante 1', '01/01/2000', 'Masculino', 'Celular', '11999999999', 'adotante1@gmail.com', '9000' ,'25803‑050', 'RJ', 'Três Rios', 'Centro', 'Rua segunda', '1', '386.427.740-02', 'adotante', null)");
+        db.execSQL("insert into adotante values('Adotante 1', '01/01/2000', 'Masculino', 'Celular', '11999999999', 'adotante1@gmail.com', '9000' ,'36071205', 'MG', 'Juiz de Fora', 'Parque serra verde', 'Rua D', '1', '075.263.440-20', 'adotante', null)");
+        db.execSQL("insert into adotante values('Adotante 1', '01/01/2000', 'Masculino', 'Celular', '11999999999', 'adotante1@gmail.com', '9000' ,'36071205', 'MG', 'Juiz de Fora', 'Parque serra verde', 'Rua D', '1', '096.774.660-46', 'adotante', null)");
+        db.execSQL("insert into adotante values('Adotante 1', '01/01/2000', 'Masculino', 'Celular', '11999999999', 'adotante1@gmail.com', '9000' ,'36071205', 'MG', 'Juiz de Fora', 'Parque serra verde', 'Rua D', '1', '105.723.340-44', 'adotante', null)");
+
+
+        //db.execSQL("insert into animal values(null, 'Animal 1', 'Cachorro', '1', 'Branco', 'Vira-lata', 'Macho', 'Pequeno', 'Sim', null, 1, '336.203.460-89')");
+        //db.execSQL("insert into animal values(null, 'Animal 2', 'Cachorro', '1', 'Branco', 'Vira-lata', 'Macho', 'Pequeno', 'Sim', null, 1, '000.000.000-00')");
+        //db.execSQL("insert into animal values(null, 'Animal 3', 'Cachorro', '1', 'Branco', 'Vira-lata', 'Macho', 'Pequeno', 'Sim', null, 1, '000.000.000-00')");
+
+
+        
     }
 
     @Override
